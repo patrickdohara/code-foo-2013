@@ -1,0 +1,12 @@
+I totally forgot to answer the two questions along with the code samples for #4 and #5, sorry! Hopefully it's alright to push them in now since it's not quite the deadline yet. If not, please disregard, :-)
+
+Question 4: How does this algorithm scale?
+
+I believe this algorithm will scale linearly. It needs to look through each record of a selected generation in order to see if any given name contains the string being searched for. If a single generation is selected it can skip all the unnecessary generations, since each array of Generation objects in the ArrayList is sorted by generation number, but of course that only helps if a generation is selected at all. Within a generation, the names of the people are also sorted alphabetically. This would be helpful if we were searching for whole names, but since I chose to allow substrings of the names I am not sure of a way to use that to my advantage.
+
+Question 5: What algorithm did you use? How does this algorithm scale? Can you reduce time and space complexity?
+I used the quicksort algorithm because it is generally the most efficient one. This algorithm scales logarithmically, O(n log n).
+
+I remember playing around with larger data sets with different sorting algorithms that quicksort can be made quicker by switching to a different sorting algorithm once the subarray sizes become very small. I'd have to experiment with different sorting algorithms to switch to, but that's where I start looking to reduce the time complexity.
+
+Another option could be to make sure the list of high scores is sorted itelf whenever a new score is inserted (insert the score in the appropriate location into the array). The quicksort could then be written to check whether the array is already sorted and, if it is, simply return. This solution may be outside of the scope of the question, though.
